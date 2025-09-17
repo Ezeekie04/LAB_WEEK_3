@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -20,7 +19,8 @@
         android:layout_marginHorizontal="20dp"
         android:background="?android:attr/dividerVertical" />
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_detail"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment_container"
         android:name="com.example.lab_week_3.DetailFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
