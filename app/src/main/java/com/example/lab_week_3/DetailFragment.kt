@@ -34,9 +34,16 @@ class DetailFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val coffeeId = arguments?.getInt(COFFEE_ID, 0) ?: 0
         setCoffeeData(coffeeId)
+
+        // 🔙 Tombol back
+        view.findViewById<View>(R.id.btn_back).setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,8 +66,17 @@ class DetailFragment : Fragment() {
                 coffeeTitle?.text = getString(R.string.latte_title)
                 coffeeDesc?.text = getString(R.string.latte_desc)
             }
+            R.id.cappuccino -> {
+                coffeeTitle?.text = getString(R.string.cappuccino_title)
+                coffeeDesc?.text = getString(R.string.cappuccino_desc)
+            }
+            R.id.espresso -> {
+                coffeeTitle?.text = getString(R.string.espresso_title)
+                coffeeDesc?.text = getString(R.string.espresso_desc)
+            }
         }
     }
+
 
     companion object {
         private const val COFFEE_ID = "COFFEE_ID"
